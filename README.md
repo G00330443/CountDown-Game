@@ -10,8 +10,8 @@ __Theory of Algorithms__
 ## Language use --python (use PYQt5 to build GUI ) 
 
 * Download library for PYQT to run this app
- address for source : http://pyqt.sourceforge.net/Docs/PyQt5/installation.html
------------------------
+> address for source : http://pyqt.sourceforge.net/Docs/PyQt5/installation.html
+
 
 ## How to use this App
 
@@ -19,10 +19,10 @@ __Theory of Algorithms__
 
 * MainPage show
 >![image](https://github.com/G00330443/CountDown-Game/blob/master/Graph/mainpage.PNG)
-
+>
 * Click Vowel or Consonants to generate word 
 >![image](https://github.com/G00330443/CountDown-Game/blob/master/Graph/generated%20Word.PNG)
-
+>
 *Start time
 
 * input answer you guessed and length of word you want to check  (word length default by 5)
