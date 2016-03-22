@@ -25,32 +25,7 @@ def con() :
     return (consonants[index])
 
 
-def inputLetters(i):
-    for i in range(8):
-        if i<3 :
-            letter=input("please input  vowels, enter 0 :\n")
-        elif i<7:
-            letter=input("please input  consonants ,enter 1 :\n")
-        else :
-             letter=input("please input  letter ,enter 2 :\n")
-             
-        if letter=='0' :
-            index=random.randint(0,len(vowels)-1)
-            inputWord.append(vowels[index])
-            print(vowels[index])
-        elif letter=='1':
-            index=random.randint(0,len(consonants)-1)
-            inputWord.append(consonants[index])
-            print(consonants[index])
-        elif letter =='2':
-            index=random.randint(0,len(l)-1)
-            inputWord.append(l[index])
-            print(l[index])
-        else :
-            print("please reenter letter")
-            inputLetters(i)
-            break
-    print(inputWord)
+
 
 def inputLetterss():
     vvv=0
