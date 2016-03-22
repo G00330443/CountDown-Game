@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets
-from mainpage3 import Ui_MainWindow
+from mainpage import Ui_MainWindow
 #from Answers_page import Ui_Form
 
 class mywindow(QtWidgets.QMainWindow):

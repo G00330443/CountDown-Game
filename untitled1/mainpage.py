@@ -140,6 +140,7 @@ class Ui_MainWindow(object):
         self.lcdNumber.setObjectName("lcdNumber")
         self.timer.timeout.connect(self.countTime)
 
+
         ## groupBox _2
         self.groupBox_2 = QtWidgets.QGroupBox(self.frame)
         self.groupBox_2.setGeometry(QtCore.QRect(10, 210, 561, 321))
@@ -175,13 +176,19 @@ class Ui_MainWindow(object):
         self.textBrowser_10 = QtWidgets.QTextBrowser(self.groupBox_2)
         self.textBrowser_10.setGeometry(QtCore.QRect(0, 60, 561, 171))
         self.textBrowser_10.setObjectName("textBrowser_10")
+
         self.textEdit = QtWidgets.QTextEdit(self.groupBox_2)
         self.textEdit.setGeometry(QtCore.QRect(493, 20, 61, 31))
         self.textEdit.setObjectName("textEdit")
+        self.label_4 = QtWidgets.QLabel(self.groupBox_2)
+        self.label_4.setGeometry(QtCore.QRect(380, 20, 111, 31))
+        self.label_4.setObjectName("label_4")
+        self.textEdit_2 = QtWidgets.QTextEdit(self.groupBox_2)
+        self.textEdit_2.setGeometry(QtCore.QRect(240, 20, 111, 31))
+        self.textEdit_2.setObjectName("textEdit_2")
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_3.setGeometry(QtCore.QRect(290, 20, 191, 31))
+        self.label_3.setGeometry(QtCore.QRect(140, 25, 91, 21))
         self.label_3.setObjectName("label_3")
-
 
         ## pushbutton_4 is a button to control countdown function
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
@@ -221,7 +228,8 @@ class Ui_MainWindow(object):
         self.groupBox_2.setTitle(_translate("MainWindow", "-------------------------------------------------------------------------------------------------------------"))
         self.label_12.setText(_translate("MainWindow", "Answers"))
         self.pushButton_3.setText(_translate("MainWindow", "Submit"))
-        self.label_3.setText(_translate("MainWindow", "Set minumin length of answer :"))
+        self.label_3.setText(_translate("MainWindow", "input answer : "))
+        self.label_4.setText(_translate("MainWindow", "length of answer :"))
         self.pushButton_4.setText(_translate("MainWindow", "Start"))
         self.pushButton_5.setText(_translate("MainWindow", "Reset"))
 
@@ -229,6 +237,7 @@ class Ui_MainWindow(object):
 ##Function to Generate Vowels
     def input(self):
         if self.vowelButton_Times==0 :
+
             number=inputLetter.vowel()
             self.generatedWord.append(number)
             self.textBrowser_4.setText(number)
@@ -266,6 +275,7 @@ class Ui_MainWindow(object):
             number=inputLetter.vowel()
             self.generatedWord.append(number)
             self.textBrowser.setText(number)
+            self.work()
         else :
             self.pushButton.clicked.connect(self.msg)
         self.vowelButton_Times=self.vowelButton_Times+1
@@ -277,6 +287,7 @@ class Ui_MainWindow(object):
        # print(self.vowelButton_Times)
        # print("-----------")
         if self.vowelButton_Times==0 :
+          #  self.work()
             number=inputLetter.con()
             print(number)
             self.generatedWord.append(number)
@@ -313,6 +324,7 @@ class Ui_MainWindow(object):
             number=inputLetter.con()
             self.generatedWord.append(number)
             self.textBrowser.setText(number)
+            self.work()
         else :
             self.pushButton_2.clicked.connect(self.msg)
         self.vowelButton_Times=self.vowelButton_Times+1
@@ -332,22 +344,35 @@ class Ui_MainWindow(object):
         findWordFromDic.set_input_word(self.generatedWord)
         print(self.generatedWord)
         print('------')
+
+        ## get content(wordlength  and input word ) from textEdit and textEdit_2
         wordlen= self.textEdit.toPlainText()
+        input=self.textEdit_2.toPlainText()
+
+        ##get infor[] from findWordFromDic
         c=findWordFromDic.infor
         number_answers=0
+
+        ##set cc
+        cc=[]
+
         if wordlen=='':
             wordlen=5
+        if input=='' :
+            self.input=''
+
         for i in c:
             if len(i)>=int(wordlen) :
+                cc.append(i)
                 self.textBrowser_10.append(i)
                 number_answers=number_answers+1
         if number_answers==0 :
             self.textBrowser_10.append('No answer')
 
-       # print(self.generatedWord)
-        c='2'
-       # reply = QInputDialog.getMultiLineText(QtWidgets.QWidget(),)
-        reply = QMessageBox.information(QtWidgets.QWidget(),"Warning","spend "+str(sec)+"seconds to ", QMessageBox.Yes | QMessageBox.No)
+        if str(input) in cc :
+            reply = QMessageBox.information(QtWidgets.QWidget(),"Congraulation","Time : spend "+str(sec)+"seconds to get answer", QMessageBox.Yes | QMessageBox.No)
+        else  :
+            reply = QMessageBox.information(QtWidgets.QWidget(),"Sorry","Time : spend "+str(sec)+"seconds ", QMessageBox.Yes | QMessageBox.No)
 
   ## Function of Countdown
     def countTime(self):
@@ -378,7 +403,7 @@ class Ui_MainWindow(object):
         self.vowelButton_Times=0
         global c
         self.c=[]
-
+        self.timeStop()
         self.number_answers=0
         self.textBrowser.clear()
         self.textBrowser_2.clear()
