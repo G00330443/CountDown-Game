@@ -48,6 +48,20 @@ __Theory of Algorithms__
 --------------------
 
 ### Python Code
+* use workThread to resolve problem of  Rockon by timw time.
+```python 
+from PyQt5.QtCore import *
+
+class WorkThread(QThread):
+    trigger = pyqtSignal()
+    def __int__(self):
+        super(WorkThread,self).__init__()
+
+    def run(self):
+        for i in range(203300030):
+            pass
+        self.trigger.emit()  
+```
 
 * to check this word and generated word randomly
 ```python 
