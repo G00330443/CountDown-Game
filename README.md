@@ -70,7 +70,7 @@ def check(word,flag,inputword) :
         return 0;
 ```
 ### References
- Begin Start Learn Pyqt5:   http://www.thehackeruniversity.com/2014/01/23/pyqt5-beginner-tutorial/
- Watch his video in youtube when i start doing python :https://www.youtube.com/user/onestopprogramming
+* Begin Start Learn Pyqt5:   http://www.thehackeruniversity.com/2014/01/23/pyqt5-beginner-tutorial/
+* Watch his video in youtube when i start doing python :https://www.youtube.com/user/onestopprogramming
 ### Note
 * We will the updating this Readme.md file as we go along with our project.
