@@ -14,6 +14,20 @@ __Theory of Algorithms__
  
 ###### You must find the longest possible word in the Oxford English dictionary that is an anagram of some or all of the letters in the random list.
 
+
+### Function realized
+
+* Random generate vowels and consonants through press vowels and consonants button.
+
+* start Rockon time when typing the last letter 
+
+* generate all words use random generated letters.
+
+* throuh setting length of answers to generate the longest word .
+
+* input answer that you guessed in input textfield  
+
+
 ### Language use --python (use PYQt5 to build GUI ) 
 
 * Download library for PYQT to run this app
@@ -83,6 +97,7 @@ def check(word,flag,inputword) :
     if len(ww)==flag :
         return 0;
 ```
+
 ### References
 * Begin Start Learn Pyqt5:   http://www.thehackeruniversity.com/2014/01/23/pyqt5-beginner-tutorial/
 * Watch his video in youtube when i start doing python :https://www.youtube.com/user/onestopprogramming
